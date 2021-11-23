@@ -1,6 +1,8 @@
 {
   "development": {
-    "database": "unit2_development",
+    "username": "isaac",
+    "password": "Soccer2020",
+    "database": "unit2_assessment",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
@@ -10,8 +12,6 @@
     "dialect": "postgres"
   },
   "production": {
-    "database": "unit2_production",
-    "host": "127.0.0.1",
-    "dialect": "postgres"
+    "use_env_variable": "DATABASE_URL"
   }
 }
