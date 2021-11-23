@@ -15,7 +15,6 @@ app.use(methodOverride('_method'))
 // WRITE YOUR ROUTES HERE /////////////
 
 app.get('/', (req, res)=>{
-    console.log("Use path")
     db.widget.findAll ({})
     .then((foundWidget)=>{
 
@@ -31,11 +30,7 @@ app.post('/', (req, res)=>{
         }
     })
     .then((createdWidget)=>{
-        db.widget.findAll ({})
-        .then((foundWidget)=>{
-
-            res.render('index.ejs', {widgets: foundWidget})
-        })
+        res.redirect('/')
     })
 })
 
@@ -47,11 +42,7 @@ app.delete('/', (req,res)=>{
         }
     })
     .then((deletedWidget)=>{
-        db.widget.findAll ({})
-        .then((foundWidget)=>{
-
-            res.render('index.ejs', {widgets: foundWidget})
-        })
+        res.redirect('/')
     })
 })
 
